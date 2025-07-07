@@ -4,7 +4,7 @@
 #include <stdbool.h>
 
 
-int playerplayer2Turn();
+int AiPlayerTurn();
 
 
 int main() {
@@ -42,12 +42,12 @@ int main() {
             printf("1.ROCK\n2.PAPER\n3.SCISSOR\nR: ");
             scanf(" %d", &player1);
             
-
-            printf("\nplayer2 TURN:\n");
-            player2 = playerplayer2Turn();
+            printf("\nAi TURN:\n");
+            Ai = AiPlayerTurn();
+            
             
 
-            if (player1Points == 2 && player2Points != 2)
+            if (player1Points == 2 && AiPoints != 2)
                 {
                     gameOver = true;
                     printf("\nPlayer 1 WON the game");
@@ -55,49 +55,49 @@ int main() {
                 } else if (player2Points == 2  && player1Points != 2)
                 {
                     gameOver = true;
-                    printf("\nplayer2 Won the game");
+                    printf("\nAi Won the game");
                     break;
                 }
 
-            if (player1 == 1 && player2 == 2)
+            if (player1 == 1 && Ai == 2)
             {
-                printf("\nplayer2 WON this round");
-                printf("\nPlayer1: Rock\nplayer2: Paper\n");
-                player2Points +=1;
+                printf("\nAi WON this round");
+                printf("\nPlayer1: Rock\nAi: Paper\n");
+                AiPoints +=1;
                 
                 
-            }else if (player1 == 1 && player2 == 3)
+            }else if (player1 == 1 && Ai == 3)
             {
                 printf("\nPlayer1 WON this round");
-                printf("\nPlayer1: Rock\nplayer2: Scissor\n");
+                printf("\nPlayer1: Rock\nAi: Scissor\n");
                 player1Points +=1;
 
-            } else if (player1 == 2 && player2 == 1)
+            } else if (player1 == 2 && Ai == 1)
             {
                 printf("\nPlayer1 WON this round");
-                printf("\nPlayer1: Paper\nplayer2: Rock\n");
+                printf("\nPlayer1: Paper\nAi: Rock\n");
                 player1Points +=1;
 
-            } else if (player1 == 2 && player2 == 3)
+            } else if (player1 == 2 && Ai == 3)
             {
-                printf("\nplayer2 WON this round");
-                printf("\nPlayer1: Paper\nplayer2: Scissor\n");
-                player2Points +=1;
+                printf("\nAi WON this round");
+                printf("\nPlayer1: Paper\nAi: Scissor\n");
+                AiPoints +=1;
 
-            } else if (player1 == 3 && player2 == 1)
+            } else if (player1 == 3 && Ai == 1)
             {
-                printf("\nplayer2 WON this round");
-                printf("\nPlayer1: Scissor\nplayer2: Rock\n");
-                player2Points +=1;
+                printf("\nAi WON this round");
+                printf("\nPlayer1: Scissor\nAi: Rock\n");
+                AiPoints +=1;
 
-            } else if (player1 == 3 && player2 == 2)
+            } else if (player1 == 3 && Ai == 2)
             {
                 printf("\nPlayer1 WON this round");
-                printf("\nPlayer1: Scissor\nplayer2: Paper\n");
+                printf("\nPlayer1: Scissor\nAi: Paper\n");
                 player1Points +=1;
 
             } else{
-                printf("\nplayer2: %d\n", player2);
+                printf("\nAi: %d\n", Ai);
                 printf("Player1: %d\n", player1);
                 printf("Empate esta ronda\n");
             }
@@ -188,7 +188,7 @@ int main() {
 }
 
 
-int playerplayer2Turn(){
+int AiPlayerTurn(){
 
     srand(time(NULL));
 
