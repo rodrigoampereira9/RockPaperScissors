@@ -24,6 +24,15 @@ int main() {
     printf("1.VS Ai\n2.VS PLAYER\nR: ");
     scanf("%d", &modoDeJogo);
 
+    while (modoDeJogo != 1 && modoDeJogo != 2)
+    {
+        printf("\n Invalid Choise\n");
+        printf("\nEscolher modo de jogo: \n");
+        printf("1.VS Ai\n2.VS PLAYER\nR: ");
+        scanf("%d", &modoDeJogo);
+    }
+    
+
     if (modoDeJogo == 1)
     {
         do
@@ -32,9 +41,11 @@ int main() {
             printf("Chose your option\n");
             printf("1.ROCK\n2.PAPER\n3.SCISSOR\nR: ");
             scanf(" %d", &player1);
+            
 
             printf("\nplayer2 TURN:\n");
             player2 = playerplayer2Turn();
+            
 
             if (player1Points == 2 && player2Points != 2)
                 {
@@ -83,7 +94,7 @@ int main() {
             {
                 printf("\nPlayer1 WON this round");
                 printf("\nPlayer1: Scissor\nplayer2: Paper\n");
-                player1 +=1;
+                player1Points +=1;
 
             } else{
                 printf("\nplayer2: %d\n", player2);
